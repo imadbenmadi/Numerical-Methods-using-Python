@@ -20,4 +20,4 @@ print(ab)
 # Displaying solution    
 print('\nSolutions are: ')
 for i in range(n):
-    print('X%d = %0.2f' %(i,x[i]), end = '\t')
+    print('X%d = %0.2f' %(i+1, ab[i,-1] / ab[i,i]), end = '\t')
