@@ -40,7 +40,7 @@ def Gauss():
         x[i] = x[i]/a[i][i]
 
     # Displaying all the solutions
-    print('\nRequired solution is: ')
+    print('\nSolutions are: ')
     for i in range(n):
         print('X%d = %0.2f' %(i,x[i]), end = '\t')
 
