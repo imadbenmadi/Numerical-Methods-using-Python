@@ -8,35 +8,35 @@ def Gauss():
 
     x = np.zeros(n)
 
-    print('Enter the Matrix Coefficients:')
+    print('Enter elements:')
     for i in range(n):
         for j in range(n+1):
-            a[i][j] = float(input( 'a['+str(i)+']['+ str(j)+']='))
-
+            print( 'a[',i,'][',j,']=')
+            a[i][j] = float(input())
+    print("the matrix before elemenation : \n")
     print(a)
     #Gauss Elimination
     for i in range(n):
         if a[i][i] == 0.0:
-            sys.exit('Eurore : can not divide by zero!')
+            print("eurore  \n cannot solve this equiation ") 
+            break
             
         for j in range(i+1, n):
-            ratio = a[j][i]/a[i][i]
+            factor = a[j][i]/a[i][i]
             
             for k in range(n+1):
                 
-                a[j][k] = a[j][k] - ratio * a[i][k]
+                a[j][k] = a[j][k] - factor * a[i][k]
                 
-    print("the matrix after elimination : ")
+    print("the matrix after elimination : \n")
     print(a)
 
 
     x[n-1] = a[n-1][n]/a[n-1][n-1]# this is the last solution : xn
-
     for i in range(n-2,-1,-1):
         x[i] = a[i][n]
         for j in range(i+1,n):
-            x[i] = x[i] - a[i][j]*x[j]
-        
+            x[i] = x[i] - a[i][j]*x[j]    
         x[i] = x[i]/a[i][i]
 
     # Displaying all the solutions
